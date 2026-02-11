@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>دفع بيتكوين سريع</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #f7931a; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #e07f0f; }
+        #result { margin-top: 20px; word-break: break-all; color: green; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>تسديد بالبيتكوين (Testnet)</h2>
+    <input type="text" id="address" placeholder="عنوان المحفظة المستلمة" />
+    <input type="number" id="amount" placeholder="المبلغ بالساتوشي (Satoshi)" />
+    <button onclick="sendBitcoin()">إرسال</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function sendBitcoin() {
+        const address = document.getElementById('address').value;
+        const amount = document.getElementById('amount').value;
+        
+        // هنا يتم ربط الواجهة بالـ Backend الخاص بك
+        document.getElementById('result').innerText = `جاري إنشاء معاملة لـ ${address} بمبلغ ${amount} ساتوشي...`;
+        
+        // fetch('/api/send', { method: 'POST', ... })
+    }
+</script>
+
+</body>
+</html>
